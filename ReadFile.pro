@@ -53,3 +53,5 @@ else:win32:CONFIG(debug, debug|release): LIBS += -LC:/OpenCV31/build/x64/vc14/li
 
 INCLUDEPATH += C:/OpenCV31/build/include
 DEPENDPATH += C:/OpenCV31/build/include
+
+#8542354
