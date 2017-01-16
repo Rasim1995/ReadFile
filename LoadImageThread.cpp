@@ -310,7 +310,7 @@ void LoadImageThread::adjustmentContrastAndBrigtness(ushort *img, uchar *outputI
         for (uint i=0; i< (sizeImg); i++)
             AverageSignal_local += abs(img[i]-Average);
 
-        float std= abs(AverageSignal_local/sizeImg);
+        float std= std::abs((double)(AverageSignal_local/sizeImg));
         float delta=std*8;
         if (delta<2050)  delta=2050;
         contrast = abs((16384*128)/delta);

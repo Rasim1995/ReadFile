@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>665</width>
-    <height>557</height>
+    <width>705</width>
+    <height>583</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -79,8 +79,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>318</width>
-            <height>254</height>
+            <width>339</width>
+            <height>267</height>
            </rect>
           </property>
          </widget>
@@ -121,8 +121,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>318</width>
-            <height>254</height>
+            <width>338</width>
+            <height>267</height>
            </rect>
           </property>
          </widget>
@@ -638,8 +638,6 @@
      </layout>
     </item>
    </layout>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
    <zorder></zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -647,8 +645,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>665</width>
-     <height>21</height>
+     <width>705</width>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">

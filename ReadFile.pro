@@ -29,15 +29,15 @@ HEADERS  += MainWindow.h \
 
 FORMS    += MainWindow.ui
 
-INCLUDEPATH+=C://OpenCV31//buildmgw//install//include
+#INCLUDEPATH+=C://OpenCV31//buildmgw//install//include
 #INCLUDEPATH+=E://Work//detector//SearchAndTrackingTargetLibrary
 
 
 
-LIBS+=C://OpenCV31//buildmgw//bin//libopencv_imgproc310.dll
-LIBS+=C://OpenCV31//buildmgw//bin//libopencv_core310.dll
-LIBS+=C://OpenCV31//buildmgw//bin//libopencv_imgcodecs310.dll
-LIBS+=C://OpenCV31//buildmgw//bin//libopencv_highgui310.dll
+#LIBS+=C://OpenCV31//buildmgw//bin//libopencv_imgproc310.dll
+#LIBS+=C://OpenCV31//buildmgw//bin//libopencv_core310.dll
+#LIBS+=C://OpenCV31//buildmgw//bin//libopencv_imgcodecs310.dll
+#LIBS+=C://OpenCV31//buildmgw//bin//libopencv_highgui310.dll
 
 
 #LIBS+=C://Users//Rasim//Documents//QTProjects//SearchAndTrackingTargetLibrary//release//libSearchAndTrackingTargetLibrary.a
@@ -47,3 +47,9 @@ LIBS+=C://OpenCV31//buildmgw//bin//libopencv_highgui310.dll
 
 
 
+
+win32:CONFIG(release, debug|release): LIBS += -LC:/OpenCV31/build/x64/vc14/lib/ -lopencv_world310
+else:win32:CONFIG(debug, debug|release): LIBS += -LC:/OpenCV31/build/x64/vc14/lib/ -lopencv_world310d
+
+INCLUDEPATH += C:/OpenCV31/build/include
+DEPENDPATH += C:/OpenCV31/build/include
