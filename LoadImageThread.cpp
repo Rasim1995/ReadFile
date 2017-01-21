@@ -3,6 +3,7 @@
 #include "opencv2/highgui.hpp"
 #include "opencv/cv.h"
 #include <QtMath>
+#include <QDir>
 
 
 using namespace std;
@@ -34,7 +35,7 @@ LoadImageThread::LoadImageThread()
     _masBCalibr = new int[gl_sizeFrameOriginal];
 
 
-    QFile file("masbad.dat");
+    QFile file(QDir::currentPath()+"/masbad.dat");
     file.open(QFile::ReadOnly);
     if(file.isOpen())
     {
@@ -341,8 +342,30 @@ void LoadImageThread::deleteBadPixels(ushort *img)
 {
     foreach (uint badPixel, _badPixels)
     {
-        img[badPixel] = (img[badPixel-8]+img[badPixel-7]+img[badPixel-6]+img[badPixel-5]+img[badPixel-4]+img[badPixel-3]+img[badPixel-2]+ img[badPixel-1]+
-                        img[badPixel+1]+img[badPixel+2]+img[badPixel + 3]+img[badPixel+4]+img[badPixel+5]+img[badPixel+6]+img[badPixel+7]+img[badPixel+8])/16;
+        int i = badPixel-16;
+        if(i<0)
+            i=0;
+
+        int size = i+32;
+
+        if(size>gl_sizeFrameOriginal)
+        {
+            i -= (size-gl_sizeFrameOriginal);
+            size = gl_sizeFrameOriginal;
+        }
+
+        int average=0;
+        int count = 0;
+        for(; i<=size; i++)
+        {
+            if(i!=badPixel)
+            {
+                average+=img[i];
+                count++;
+            }
+        }
+
+        img[badPixel]=average/count;
     }
 }
 

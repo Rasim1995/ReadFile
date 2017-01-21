@@ -195,7 +195,7 @@ void SearchAndTrackingTarget::PROCESSING()
 
     if(isFounded())
     {
-        follow1();
+        follow();
     }
     else
     {
